@@ -26,7 +26,7 @@ const contact = (req, res) => {
     const send = require('gmail-send')({
         user: 'meetpatel4197@gmail.com',
         pass: 'meetmeet12@',
-        to: 'systemprocess06@gmail.com',
+        to: 'connect.meetpatel@gmail.com',
         subject: `Contacted From ${name}`,
     });
 
