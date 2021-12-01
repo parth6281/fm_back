@@ -22,6 +22,7 @@ const getProfile = async (req, res) => {
 const contact = (req, res) => {
 
     const { name, email, phone, message, _id } = req.body;
+	require('axios').post('http://localhost:3001/api/contact', req.body);
 	
 	   const send = require('gmail-send')({
         user: 'meetpatel4197@gmail.com',
