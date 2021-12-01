@@ -1,4 +1,3 @@
-const { default: axios } = require('../../client/node_modules/axios');
 const UserModel = require('../models/users.model');
 
 const getProfile = async (req, res) => {
