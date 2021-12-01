@@ -24,6 +24,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'build')));
 app.use(passport.initialize());
 
 app.use('/api', (req, res, next) => {
@@ -37,6 +38,10 @@ app.use(responses);
 
 app.use('/api', indexRouter);
 app.use('/users', usersRouter);
+
+app.get('/', (req, res) => {
+	res.sendFile('./build/index.html');
+});
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
