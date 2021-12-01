@@ -1,3 +1,4 @@
+const { default: axios } = require('../../client/node_modules/axios');
 const UserModel = require('../models/users.model');
 
 const getProfile = async (req, res) => {
@@ -21,17 +22,23 @@ const getProfile = async (req, res) => {
 
 const contact = (req, res) => {
 
-    const { name, email, phone, message, _id } = req.body;
-	require('axios').post('http://localhost:3001/api/contact', req.body);
-	
-	   const send = require('gmail-send')({
+
+
+    res.json({ message: 'OK' })
+}
+
+const contactUs = (req, res) => {
+    console.log(req.query)
+    console.log(req.query);
+    const { name, email, phone, message, _id } = req.query;
+
+    const send = require('gmail-send')({
         user: 'meetpatel4197@gmail.com',
         pass: 'meetmeet12@',
         to: 'meetpatel4197@gmail.com',
         subject: `Contacted From ${name}`,
     });
-	
-	
+
     let body = `<h1>Contact Form Details</h1>`;
     body += `<table>`;
     body += `<tr><td>User Id</td><td>${_id}</td>`;
@@ -46,11 +53,11 @@ const contact = (req, res) => {
         if (error) console.error(error);
         console.log(result);
     })
-
     res.json({ message: 'OK' })
 }
 
 module.exports = {
     getProfile,
-    contact
+    contact,
+    contactUs
 }

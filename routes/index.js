@@ -23,6 +23,7 @@ router.use('/income', incomeRouter);
 router.use('/expense', expenseRouter);
 
 router.get('/profile/:userId', ctrlUsers.getProfile);
+router.get('/contact', ctrlUsers.contactUs);
 router.post('/contact', ctrlUsers.contact);
 
 router.use('/stripe', stripeRouter);
