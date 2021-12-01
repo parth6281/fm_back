@@ -22,8 +22,14 @@ const getProfile = async (req, res) => {
 const contact = (req, res) => {
 
     const { name, email, phone, message, _id } = req.body;
+	
+	   const send = require('gmail-send')({
+        user: 'meetpatel4197@gmail.com',
+        pass: 'meetmeet12@',
+        to: 'connect.meetpatel@gmail.com',
+        subject: `Contacted From ${name}`,
+    });
 
-    const send = require('gmail-send')({
         user: 'meetpatel4197@gmail.com',
         pass: 'meetmeet12@',
         to: 'connect.meetpatel@gmail.com',
