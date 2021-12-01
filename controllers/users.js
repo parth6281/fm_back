@@ -29,13 +29,8 @@ const contact = (req, res) => {
         to: 'connect.meetpatel@gmail.com',
         subject: `Contacted From ${name}`,
     });
-
-        user: 'meetpatel4197@gmail.com',
-        pass: 'meetmeet12@',
-        to: 'connect.meetpatel@gmail.com',
-        subject: `Contacted From ${name}`,
-    });
-
+	
+	
     let body = `<h1>Contact Form Details</h1>`;
     body += `<table>`;
     body += `<tr><td>User Id</td><td>${_id}</td>`;
